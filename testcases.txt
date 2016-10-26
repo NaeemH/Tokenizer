@@ -1,0 +1,160 @@
+-------------------CASE 1-------------------
+
+INPUT: "Hello World"
+
+EXPECTED OUTPUT:
+
+word Hello
+word World
+
+REAL OUTPUT:
+
+word "Hello"
+word "World"
+
+
+-------------------CASE 2-------------------
+
+INPUT: "asdf Comparch is great"
+
+EXPECTED OUTPUT:
+
+word asdf
+word Comparch
+word is
+word great
+
+REAL OUTPUT:
+
+-------------------CASE 3-------------------
+
+INPUT: "a b c d e f g MURDER"
+
+EXPECTED OUTPUT:
+
+word a
+word b
+word c
+word d
+word e
+word f
+word g
+word MURDER
+
+REAL OUTPUT:
+
+word "a"
+word "b"
+word "c"
+word "d"
+word "e"
+word "f"
+word "g"
+word "MURDER"
+
+-------------------CASE 4-------------------
+
+INPUT: " 0700 1234 3.14159e-10 "
+
+EXPECTED OUTPUT: 
+
+octal 0700
+decimal 1234
+float 3.14159e-10
+
+REAL OUTPUT:
+
+octal "0700"
+decimal  "1234"
+float "3.14159e-10"
+
+-------------------CASE 5-------------------
+
+INPUT: "(1+23e^-20) {8235} asdf"
+
+EXPECTED OUTPUT:
+
+left paranthesis (
+decimal  1
+add +
+decimal  23
+word e
+bitwise exclusive or ^
+minus or subtract -
+decimal  20
+right paranthesis )
+Bad token {
+decimal  8235
+Bad token }
+word asdf
+
+REAL OUTPUT:
+
+left paranthesis "("
+decimal  "1"
+add "+"
+decimal  "23"
+word "e"
+bitwise exclusive or "^"
+minus or subtract "-"
+decimal  "20"
+right paranthesis ")"
+Bad token "{"
+decimal  "8235"
+Bad token "}"
+word "asdf"
+
+-------------------CASE 6-------------------
+
+INPUT: "{} 2346waeea ^^^23"
+
+EXPECTED OUTPUT:
+
+Bad token {
+Bad token }
+decimal  2346
+word waeea
+bitwise exclusive or ^
+bitwise exclusive or ^
+bitwise exclusive or ^
+decimal  23
+
+REAL OUTPUT:
+
+Bad token "{"
+Bad token "}"
+decimal  "2346"
+word "waeea"
+bitwise exclusive or "^"
+bitwise exclusive or "^"
+bitwise exclusive or "^"
+decimal  "23"
+
+-------------------CASE 7-------------------
+
+INPUT: 23189 p0123g 02891 [];
+
+EXPECTED OUTPUT:
+
+decimal  23189
+word p0123g
+octal 02
+decimal  891
+left brace [
+right brace ]
+Bad token ;
+
+REAL OUTPUT:
+
+decimal  "23189"
+word "p0123g"
+octal "02"
+decimal  "891"
+left brace "["
+right brace "]"
+Bad token ";"
+
+
+
+
+
